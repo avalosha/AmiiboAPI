@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3D1-37-4Ud">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Mario Bross & Co.-->
+        <scene sceneID="pKo-SD-6d7">
+            <objects>
+                <tableViewController id="duH-4Q-83F" customClass="AmiiboListViewController" customModule="AmiiboAPI" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ODC-ZT-yN8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="uvO-KE-DXt">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="201" id="TQx-hA-O5e" customClass="AmiiboTableViewCell" customModule="AmiiboAPI" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="414" height="201"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TQx-hA-O5e" id="eUo-fb-bq2">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NsA-kr-2ok">
+                                            <rect key="frame" x="0.0" y="0.0" width="201" height="200.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="201" id="gSd-n5-Pg0"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAk-ob-Ez5">
+                                            <rect key="frame" x="207" y="0.0" width="207" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="BEF-C3-c01"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Series" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3R-XF-lfe">
+                                            <rect key="frame" x="207" y="100.5" width="207" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="iCZ-FK-REl"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="NsA-kr-2ok" secondAttribute="bottom" id="PoH-PM-sy4"/>
+                                        <constraint firstAttribute="trailing" secondItem="TAk-ob-Ez5" secondAttribute="trailing" id="QF8-eJ-HLx"/>
+                                        <constraint firstItem="TAk-ob-Ez5" firstAttribute="top" secondItem="eUo-fb-bq2" secondAttribute="top" id="Ulr-hp-Zb4"/>
+                                        <constraint firstAttribute="trailing" secondItem="B3R-XF-lfe" secondAttribute="trailing" id="YuL-FD-OT3"/>
+                                        <constraint firstItem="B3R-XF-lfe" firstAttribute="leading" secondItem="NsA-kr-2ok" secondAttribute="trailing" constant="6" id="c2S-CK-k5M"/>
+                                        <constraint firstAttribute="bottom" secondItem="B3R-XF-lfe" secondAttribute="bottom" id="do0-jh-eal"/>
+                                        <constraint firstItem="NsA-kr-2ok" firstAttribute="leading" secondItem="eUo-fb-bq2" secondAttribute="leading" id="h4e-Hw-tyb"/>
+                                        <constraint firstItem="NsA-kr-2ok" firstAttribute="top" secondItem="eUo-fb-bq2" secondAttribute="top" id="nZd-23-euU"/>
+                                        <constraint firstItem="B3R-XF-lfe" firstAttribute="top" secondItem="TAk-ob-Ez5" secondAttribute="bottom" constant="0.5" id="sf2-l3-oxh"/>
+                                        <constraint firstItem="TAk-ob-Ez5" firstAttribute="leading" secondItem="NsA-kr-2ok" secondAttribute="trailing" constant="6" id="vDx-Kf-kYE"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="amiiboImageView" destination="NsA-kr-2ok" id="zWM-e5-NbT"/>
+                                    <outlet property="nameLabel" destination="TAk-ob-Ez5" id="w0K-sm-IrX"/>
+                                    <outlet property="seriesLabel" destination="B3R-XF-lfe" id="Ya8-vY-WtL"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="duH-4Q-83F" id="CAI-Gm-hN7"/>
+                            <outlet property="delegate" destination="duH-4Q-83F" id="ICz-Km-SyA"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Mario Bross &amp; Co." id="N9d-9K-Fzs"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="arg-zT-W3N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1850.7246376811595" y="121.875"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hWr-ej-04m">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3D1-37-4Ud" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" id="30a-do-Yne">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="28"/>
+                            <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="duH-4Q-83F" kind="relationship" relationship="rootViewController" id="PlF-im-FQm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OnE-fi-tYh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="940.57971014492762" y="121.875"/>
+        </scene>
+    </scenes>
+</document>
