@@ -36,6 +36,9 @@ class AmiiboListViewController: UITableViewController {
         cell.nameLabel?.text = amiibos[indexPath.row].name
         cell.seriesLabel?.text = amiibos[indexPath.row].amiiboSeries
         
+        cell.contentView.backgroundColor = UIColor.yellow
+        cell.backgroundColor = UIColor.lightGray
+        
         let url = URL(string: amiibos[indexPath.row].image)
         let data = try? Data(contentsOf: url!)
         if let data = data {
@@ -81,6 +84,7 @@ class AmiiboListViewController: UITableViewController {
     // MARK: -JSON Parsing
     
     func updateAmiiboData(json: JSON) {
+        amiibos.removeAll()
         for item in json["amiibo"].arrayValue {
             let amiibo = Amiibo(
                 name: item["name"].stringValue,
@@ -93,3 +97,21 @@ class AmiiboListViewController: UITableViewController {
     }
 }
 
+    // MARK: -Seach Bar Methods
+extension AmiiboListViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        getAmiiboData(from: "https://www.amiiboapi.com/api/amiibo/?name=\(searchBar.text!)")
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            getAmiiboData(from: "https://www.amiiboapi.com/api/amiibo/")
+            print("Entro aqui")
+        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        getAmiiboData(from: "https://www.amiiboapi.com/api/amiibo/")
+    }
+}
